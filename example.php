@@ -21,7 +21,7 @@ if ($yamnotif->check($_POST) == '200 OK') {
                     'datetime'     => $_POST['datetime'],
                     'operation_id' => $_POST['operation_id'],
                     'user_id'      => $data[1], // ИД пользователя
-                    'amount'       => $_POST['amount'],
+                    'amount'       => $_POST['withdraw_amount'], // Сумма, списанная с плательщика
                 ),
             ));
             $return = json_decode(curl_exec($ch), true);
