@@ -5,17 +5,14 @@
  * Серверный класс для приёма уведомлений от сервиса Яндекс.Деньги
  *
  * Использование:
- * $yamnotif = new \YandexMoneyHttpNotification\Server('Секретное слово');
+ * $yamnotif = new \DimNS\YandexMoneyHttpNotification\Server('Секретное слово');
  * echo $yamnotif->check($_POST);
  *
- * @version 0.1.0 24.12.2015
+ * @version 1.0.0 26.04.2016
  * @author Дмитрий Щербаков <atomcms@ya.ru>
- * @license MIT
- * @copyright 2015 Bestion
- * @link https://github.com/DimNS/YandexMoneyHttpNotification <GitHub репозиторий>
  */
 
-namespace YandexMoneyHttpNotification;
+namespace DimNS\YandexMoneyHttpNotification;
 
 class Server
 {
@@ -31,10 +28,11 @@ class Server
      *
      * @return null
      *
-     * @version 0.1.0 24.12.2015
+     * @version 1.0.0 26.04.2016
      * @author Дмитрий Щербаков <atomcms@ya.ru>
      */
-    function __construct($secret) {
+    public function __construct($secret)
+    {
         $this->secret = $secret;
     }
 
@@ -45,10 +43,11 @@ class Server
      *
      * @return null
      *
-     * @version 0.1.0 24.12.2015
+     * @version 1.0.0 26.04.2016
      * @author Дмитрий Щербаков <atomcms@ya.ru>
      */
-    public function check($params) {
+    public function check($params)
+    {
         // Считаем хеш для проверки
         $hash = sha1($params['notification_type'] . '&' . $params['operation_id'] . '&' . $params['amount'] . '&643&' . $params['datetime'] . '&' . $params['sender'] . '&' . $params['codepro'] . '&' . $this->secret . '&' . $params['label']);
 
@@ -62,4 +61,3 @@ class Server
         }
     }
 }
-?>
