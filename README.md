@@ -1,6 +1,12 @@
 # YandexMoneyHttpNotification
 Когда сайтов много, а кошелёк один. PHP-библиотека для получения HTTP-уведомлений от Яндекс.Денег и перенаправление их на нужный сайт.
 
+## Без использования библиотеки YandexMoneyHttpNotification Яндекс.Деньги позволяет принимать платежи только с одного сайта для одного кошелька.
+![Без использования библиотеки YandexMoneyHttpNotification](https://github.com/dimns/yandexmoneyhttpnotification/raw/master/before.jpg "Без использования библиотеки YandexMoneyHttpNotification")
+
+## Используя библиотеку YandexMoneyHttpNotification вы сможете принимать платежи на один кошелёк, но с любого количества различных сайтов.
+![Используя библиотеку YandexMoneyHttpNotification](https://github.com/dimns/yandexmoneyhttpnotification/raw/master/after.jpg "Используя библиотеку YandexMoneyHttpNotification")
+
 ## Требования
 - PHP 5.3 или выше.
 
